@@ -1,0 +1,15 @@
+.form-container {
+    display:flex;
+    justify-content: center;
+    
+   .form-item {
+    margin-bottom: 10px;
+    width:500px;
+       .card-title {
+           margin-left:10px;
+       }
+   }
+   .form-style {
+    margin: 10px;
+   }
+}

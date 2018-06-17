@@ -1,0 +1,50 @@
+<ng-container *ngIf="!editing">
+  <div class="card-content white-text card-content--container">
+    <span class="card-title title-ellipsis">
+      {{ task.title }}
+    </span>
+    <a class="card-title activator float-btn btn-floating halfway-fab waves-effect waves-light red">
+      <i class="material-icons">share</i>
+    </a>
+    <p> {{ task.description }}</p>
+    <div class="icon-container">
+
+      <span (click)="editTitle()" aria-label="Edit task title" class="icon material-icons">edit</span>
+
+
+      <span (click)="remove.emit()" aria-label="Delete task" class="icon material-icons">delete</span>
+
+
+
+      <span class="icon material-icons" *ngIf="!editing" (click)="toggleStatus()" aria-label="Mark task as completed" [ngClass]="{'icon--active': task.completed}">done</span>
+    </div>
+
+  </div>
+  <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Select User<i class="material-icons right" style = "font-size:24px;">close</i></span>
+    <div class="collection">
+      <a *ngFor="let person of userArr" (click)="addTaskToUser(person)" class="collection-item">{{person.email}}</a>
+    </div>
+  </div>
+</ng-container>
+
+
+
+<ng-container *ngIf="editing">
+  <div class="card-content white-text">
+    <div class="card-title">
+      <div class="input-field col s12"></div>
+      <input [(ngModel)]="title" autoFocus class="white-text" name="title" type="text">
+    </div>
+    <div class="card-body">
+      <div class="input-field col s12"></div>
+      <textarea [(ngModel)]="description" class="white-text" rows="3"></textarea>
+    </div>
+    <div class="icon-container">
+
+      <span class="icon waves-effect waves-light material-icons" (click)="stopEditing()" aria-label="Cancel editing">&#xe14c;
+      </span>
+      <span class="icon waves-effect waves-light material-icons" (click)="saveTask()" aria-label="Mark task as completed">done</span>
+    </div>
+  </div>
+</ng-container>

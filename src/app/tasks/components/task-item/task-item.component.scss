@@ -1,0 +1,30 @@
+
+
+.card-content--container {
+    .float-btn i {
+        line-height: 40px;
+    }
+    .title-ellipsis.card-title {
+        width:300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .btn-floating.halfway-fab{
+        top: 10px;
+    }
+    &:hover .icon-container{
+        visibility: visible;
+    }
+    .icon-container {
+        visibility: hidden;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .icon {
+        cursor: pointer;
+        padding:10px;
+        
+    }
+}
+

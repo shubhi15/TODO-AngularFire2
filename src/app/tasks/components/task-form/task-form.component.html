@@ -1,0 +1,17 @@
+<div class="form-container">
+    <div class="form-item card">
+        <div class="card-title">Add Tasks</div>
+        <form [formGroup]="taskForm" class="form-style" (ngSubmit)="onSubmit()">
+            <div class="input-field col s12">
+                <label for="Title">Title</label>
+                <input type="text" formControlName="title" class="text-darken-4" id="Title" />
+            </div>
+            <div class="input-field col s12">
+                <textarea id="textarea1" formControlName="description" class="materialize-textarea text-darken-4"></textarea>
+                <label for="textarea1">Description</label>
+            </div>
+            <button type="submit" class="btn btn-primary">ADD</button>
+
+        </form>
+    </div>
+</div>
